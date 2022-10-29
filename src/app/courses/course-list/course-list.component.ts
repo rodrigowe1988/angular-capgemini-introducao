@@ -16,32 +16,32 @@ export class CourseListComponent implements OnInit {
       {
         id: 1,
         name: 'Angular Course',
-        imageUrl: '',
+        imageUrl: 'assets/images/angular.svg',
         price: 99.99,
         code: 'XPS 8796',
         duration: 120,
-        rating: 6.8,
+        rating: 4.8,
         releaseDate: '22/10/2022'
       },
       {
         id: 2,
         name: 'Java Course',
-        imageUrl: '',
+        imageUrl: 'assets/images/java.png',
         price: 149.99,
         code: 'XPS 1324',
         duration: 190,
-        rating: 7.1,
+        rating: 4.7,
         releaseDate: '22/10/2022'
 
       },
       {
         id: 3,
         name: 'MySQL Course',
-        imageUrl: '',
+        imageUrl: 'assets/images/mysql.png',
         price: 49.99,
         code: 'XPS 5623',
         duration: 50,
-        rating: 7.4,
+        rating: 4.6,
         releaseDate: '22/10/2022'
       },
     ];
