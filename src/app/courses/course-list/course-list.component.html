@@ -27,6 +27,10 @@
       <td>
         <app-star [rating]="course.rating"></app-star>
       </td>
+      <td>
+        <!--primeiro parametro passado para o routerLink é o link da nossa rota e o segundo é o id do curso-->
+        <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Edit</a>
+      </td>
     </tr>
   </tbody>
 </table>

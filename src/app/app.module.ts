@@ -10,6 +10,7 @@ import { StarComponent } from './star/star/star.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
 import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
+import { CourseInfoComponent } from './course-info/course-info.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ErrorNotFoundComponent } from './error-not-found/error-not-found.compon
     ReplacePipe,
     NavbarComponent,
     ErrorNotFoundComponent,
+    CourseInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +34,11 @@ import { ErrorNotFoundComponent } from './error-not-found/error-not-found.compon
         path: 'courses', component: CourseListComponent
       },
       {
+        path: 'courses/info/:id', component: CourseInfoComponent
+      },
+      {
         path: '**', component: ErrorNotFoundComponent
-      }
+      },
     ]),
   ],
   providers: [],
