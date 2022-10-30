@@ -5,20 +5,21 @@ import { RouterModule } from "@angular/router";
 import { FormsModule } from '@angular/forms';
 import { ReplacePipe } from "./pipe/replace.pipe";
 import { CommonModule } from "@angular/common";
-import { StarComponent } from "./star/star/star.component";
+import { StarModule } from "./shared/component/star/star/star.module";
+import { AppPipeModule } from "./shared/pipe/app-pipe.module";
 
 
 @NgModule({
   declarations: [
     CourseListComponent,
     CourseInfoComponent,
-    ReplacePipe,
-    StarComponent
   ],
   //rotas que nosso modulo course possui, como nao é o nosso modulo pai, podemos importar nossas rotas usando o forChild
   imports: [
     FormsModule,
     CommonModule,
+    StarModule,
+    AppPipeModule,
     RouterModule.forChild([
       {
         path: 'courses', component: CourseListComponent
