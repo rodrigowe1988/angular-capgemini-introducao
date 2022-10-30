@@ -29,8 +29,9 @@
       </td>
       <td>
         <!--primeiro parametro passado para o routerLink é o link da nossa rota e o segundo é o id do curso-->
-        <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary">Edit</a>
+        <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary mr-2">Edit</a>
       </td>
+      <td><button (click)="deleteById(course.id)" class="btn btn-danger mr-2">Delete</button></td>
     </tr>
   </tbody>
 </table>
