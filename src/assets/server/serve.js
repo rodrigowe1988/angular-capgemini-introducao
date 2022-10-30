@@ -17,6 +17,11 @@ app.listen(3100, () => {
   console.log('Server Started!');
 });
 
+app.get('/api/testeGet', (req, res) => {
+  const allCourses = COURSES;
+  return res.status(200).json(allCourses);
+})
+
 app.route('/api/courses').get((request, response) => {
   response.send(COURSES);
 });
@@ -27,7 +32,7 @@ app.route('/api/courses').post((request, response) => {
   const firstId = COURSES ? Math.max.apply(null, COURSES.map(courseIterator => courseIterator.id)) + 1 : 1;
   course.id = firstId;
   COURSES.push(course);
-  
+
 
   response.status(201).send(course);
 });
@@ -51,7 +56,7 @@ app.route('/api/courses/:id').get((request, response) => {
 app.route('/api/courses/:id').delete((request, response)=> {
   const courseId = +request.params['id'];
   COURSES = COURSES.filter(courseIterator => courseIterator.id !== courseId);
-  
+
   response.status(204).send({});
 });
 

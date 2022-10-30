@@ -9,6 +9,8 @@ import { ReplacePipe } from './pipe/replace.pipe';
 import { StarComponent } from './star/star/star.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
 import { CourseInfoComponent } from './course-info/course-info.component';
 
@@ -26,6 +28,7 @@ import { CourseInfoComponent } from './course-info/course-info.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: '', redirectTo: 'courses', pathMatch: 'full'

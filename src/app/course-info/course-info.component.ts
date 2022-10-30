@@ -20,13 +20,18 @@ export class CourseInfoComponent implements OnInit {
   ngOnInit(): void {
     //retorna como default uma string
     //esse é o id que estamos solicitando no path da nossa rota do componente
-    this.course = this.courseService.retrieveById(
+    this.courseService.retrieveById(
       Number(this.activatedRoute.snapshot.paramMap.get('id'))
-    );
-    console.log(this.course);
+    ).subscribe({
+      next: courseInfo => this.course = courseInfo,
+      error: err => console.log("Error: ", err)
+    });
   }
 
   save(): void {
-    this.courseService.save(this.course);
+    this.courseService.save(this.course).subscribe({
+      next: course => console.log("Saved succesfully! ", course),
+      error: err => console.log('Error: ', err)
+    });
   }
 }
