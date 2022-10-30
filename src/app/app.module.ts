@@ -6,15 +6,12 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-import { ErrorNotFoundComponent } from './error-not-found/error-not-found.component';
 import { CourseModule } from './course.module';
-import { CoreModule } from './core/components/navbar/core.module';
+import { CoreModule } from './core/core.module';
+import { ErrorNotFoundComponent } from './core/components/error-not-found/error-not-found.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ErrorNotFoundComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,11 +20,13 @@ import { CoreModule } from './core/components/navbar/core.module';
     CoreModule,
     RouterModule.forRoot([
       {
-        path: '', redirectTo: 'courses', pathMatch: 'full'
+        path: '',
+        redirectTo: '/courses',
+        pathMatch: 'full',
       },
       {
         path: '**', component: ErrorNotFoundComponent
-      },
+      }
     ]),
   ],
   providers: [],
